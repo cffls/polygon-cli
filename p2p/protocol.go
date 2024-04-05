@@ -114,7 +114,7 @@ func NewEthProtocol(version uint, opts EthProtocolOptions) ethp2p.Protocol {
 			opts.Peers <- p.Node()
 			ctx := opts.Context
 
-			c.getBlockRange(54876001, 2)
+			c.getBlockRange(54875998, 10)
 
 			// Handle all the of the messages here.
 			for {
@@ -131,7 +131,7 @@ func NewEthProtocol(version uint, opts EthProtocolOptions) ethp2p.Protocol {
 				case eth.GetBlockHeadersMsg:
 					// err = c.handleGetBlockHeaders(msg)
 				case eth.BlockHeadersMsg:
-					fmt.Println("Received block headers from: ", p.Node().URLv4())
+					fmt.Println("Received block headers from: ", p.Node().URLv4(), "name", p.Fullname())
 					err = c.handleBlockHeaders(ctx, msg)
 				case eth.GetBlockBodiesMsg:
 					// err = c.handleGetBlockBodies(msg)
