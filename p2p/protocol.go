@@ -114,7 +114,7 @@ func NewEthProtocol(version uint, opts EthProtocolOptions) ethp2p.Protocol {
 			opts.Peers <- p.Node()
 			ctx := opts.Context
 
-			c.getBlockRange(54875998, 10)
+			c.getBlockRange(54875925, 192)
 
 			// Handle all the of the messages here.
 			for {
